@@ -18,12 +18,13 @@ Flixster is an app that allows users to browse movies from the [The Movie Databa
 - [ ] (2pts) For popular movies (i.e. a movie voted for more than 5 stars), the full backdrop image is displayed. Otherwise, a poster image, the movie title, and overview is listed. Use Heterogenous RecyclerViews and use different ViewHolder layout files for popular movies and less popular ones.
 
 ### App Walkthough GIF
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
-
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+#### Portrait Mode:
+<img src="walkthrough-portrait.gif" width=250><br><br>
+#### Landscape Mode:
+<img src = "walkthrough-landscape.gif" height = 250 width = 550><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+No particular challenges with the creation of the app itself, though personally, my computer had problems handling AndroidStudio and the emulator at once. It would often take up to 5-10 min just to start booting up, and prolong other important apps on my desktop from loading. This is where I find a good portion of my time goes while doing the project. 
 
 ### Open-source libraries used
 

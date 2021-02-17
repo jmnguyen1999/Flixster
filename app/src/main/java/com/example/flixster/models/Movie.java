@@ -13,10 +13,12 @@ package com.example.flixster.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class Movie {
     //Fields:
     private String posterPath;
@@ -26,6 +28,7 @@ public class Movie {
     private String posterPathSize;
     private String backdropPathSize;
 
+    public Movie(){}
     /**
      * Movie()
      * Purpose:     Constructor. Needs a JSON object that contains all the data for fields (a movie) and image sizes.

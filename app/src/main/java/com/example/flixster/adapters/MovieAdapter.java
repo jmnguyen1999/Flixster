@@ -9,6 +9,7 @@ package com.example.flixster.adapters;
  * @author Josephine Mai Nguyen
  * @version 1.0
  */
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -21,6 +22,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -114,7 +117,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 public void onClick(View v) {
                     Intent i = new Intent(context, DetailActivity.class);
                     i.putExtra("movie", Parcels.wrap(movie));
-                    context.startActivity(i);
+
+                    // Pass data object in the bundle and populate details activity.
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, (View) tvTitle, "title");
+                    context.startActivity(i, options.toBundle());
                 }
             });
         }

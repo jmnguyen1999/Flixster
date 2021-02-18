@@ -19,7 +19,8 @@
         android:text="Some Title here:"
         android:textSize="35sp"
         tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="27dp" />
+        tools:layout_editor_absoluteY="27dp"
+        android:transitionName="title"/>
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -35,5 +36,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Some overview is here loasdklfhjlskdjflksjdlfkjsadf;lsakjdfl;"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        />
 </LinearLayout>

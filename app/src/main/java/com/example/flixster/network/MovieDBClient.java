@@ -37,4 +37,9 @@ public class MovieDBClient {
     public void makeNowPlayingRequest(JsonHttpResponseHandler handler){
         client.get(NOW_PLAYING_URL, handler);
     }
+
+    public void makeTrailerRequest(int id, JsonHttpResponseHandler handler){
+        client.get(String.format(VIDEO_URL, id), handler);
+    }
+
 }

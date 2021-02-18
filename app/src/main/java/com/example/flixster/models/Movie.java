@@ -21,14 +21,14 @@ import java.util.List;
 @Parcel
 public class Movie {
     //Fields:
-    private int movieId;
-    private String posterPath;
-    private String title;
-    private String overview;
-    private String backdropPath;
-    private String posterPathSize;
-    private String backdropPathSize;
-    private double rating;
+    int movieId;
+    String posterPath;
+    String title;
+    String overview;
+    String backdropPath;
+    String posterPathSize;
+    String backdropPathSize;
+    double rating;
 
     public Movie(){}
     /**

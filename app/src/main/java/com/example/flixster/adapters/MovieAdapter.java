@@ -23,11 +23,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.flixster.DetailActivity;
+import com.example.flixster.activities.DetailsActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
 
@@ -115,11 +114,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             container.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(context, DetailActivity.class);
+                    Intent i = new Intent(context, DetailsActivity.class);
                     i.putExtra("movie", Parcels.wrap(movie));
 
                     // Pass data object in the bundle and populate details activity.
-                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, (View) tvTitle, "title");
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, tvTitle, "title");
                     context.startActivity(i, options.toBundle());
                 }
             });

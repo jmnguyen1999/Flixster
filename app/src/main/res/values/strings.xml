@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Flixster</string>
+    <string name="item_movie_tvTitle_sampleText">The Little Things</string>
+    <string name="item_movie_tvOverview_sampleText">Deputy Sheriff Joe &quot;Deke&quot; Deacon joins forces with Sgt. Jim Baxter to search for a serial killer who\s terrorizing Los Angeles. As they track the culprit, Baxter is unaware that the investigation is dredging up echoes of Deke\'s past, uncovering disturbing secrets that could threaten more than his case.</string>
+    <string name="sampleTitle">Some Title here:</string>
+    <string name="sampleOverview">Some Overview/Synopsis here:</string>
 </resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_movie_container_paddingBottom">7dp</dimen>
+    <dimen name="item_movie_container_layout_height">175dp</dimen>
+    <dimen name="item_movie_portrait_ivPoster_layout_width">120dp</dimen>
+    <dimen name="item_movie_ivPoster_layout_marginStart">0dp</dimen>
+    <dimen name= "item_movie_ivPoster_layout_marginTop">5dp</dimen>
+    <dimen name="item_movie_tv_startAndTopMargins">5dp</dimen>
+    <dimen name="item_movie_tvTitle_textSize">24sp</dimen>
+    <dimen name="item_movie_tvOverview_layout_marginEnd">12dp</dimen>
+
+    <dimen name="item_movie_land_ivPoster_layout_width">350dp</dimen>
+
+    <dimen name ="details_ypvVideoPlayer_layout_height">250dp</dimen>
+    <dimen name ="details_tvTitle_padding">5dp</dimen>
+    <dimen name ="details_tvTitle_textSize">35sp</dimen>
+    <dimen name ="details_tvTitle_layout_editor_absoluteX">12dp</dimen>
+    <dimen name ="details_tvTitle_layout_editor_absoluteY">27dp</dimen>
+    <dimen name ="details_ratingBar_padding">5dp</dimen>
+    <dimen name="details_ratingBar_sampleRating">7</dimen>
+    <dimen name="details_tvOverview_paddingLeftEnd">15dp</dimen>
+    <dimen name="details_tvOverview_paddingTop">5dp</dimen>
+    <dimen name="details_tvOverview_textSize">14sp</dimen>
+</resources>

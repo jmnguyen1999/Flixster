@@ -1,4 +1,4 @@
-package com.example.flixster;
+package com.example.flixster.activities;
 /**
  * MainActivity.java
  * Purpose: This is where the main Flixster screen resides. Makes network requests to "themoviedb.org" API to access Now Playing movies and Configuration image sizes.
@@ -19,6 +19,7 @@ import android.util.Log;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.flixster.R;
 import com.example.flixster.adapters.MovieAdapter;
 import com.example.flixster.models.Movie;
 
@@ -31,7 +32,7 @@ import java.util.List;
 
 import okhttp3.Headers;
 
-public class MainActivity extends AppCompatActivity {
+public class FlixsterActivity extends AppCompatActivity {
     //Constants/Fields:
     public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     public static final String CONFIGURATION_URL = "https://api.themoviedb.org/3/configuration?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
      */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_flixster);
 
         movies = new ArrayList<>();
 

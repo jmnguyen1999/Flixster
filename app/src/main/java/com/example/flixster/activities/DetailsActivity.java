@@ -1,6 +1,4 @@
-package com.example.flixster;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.flixster.activities;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +7,7 @@ import android.widget.TextView;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.flixster.R;
 import com.example.flixster.models.Movie;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -21,23 +20,23 @@ import org.parceler.Parcels;
 
 import okhttp3.Headers;
 
-public class DetailActivity extends YouTubeBaseActivity {
+public class DetailsActivity extends YouTubeBaseActivity {
 
     private static final String YOUTUBE_API_KEY = "AIzaSyD0CkaPZjI5CTA5eAJik0ieuXxwzbr1MTA";
     public static final String VIDEO_URL = "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     TextView tvTitle;
     TextView tvOverview;
     RatingBar ratingBar;
-    YouTubePlayerView youTubePlayerView;
+    YouTubePlayerView ypvVideoPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_details);
         tvTitle = findViewById(R.id.tvTitle);
         tvOverview = findViewById(R.id.tvOverview);
         ratingBar= findViewById(R.id.ratingBar);
-        youTubePlayerView = (YouTubePlayerView) findViewById(R.id.player);
+        ypvVideoPlayer = findViewById(R.id.ypvVideoPlayer);
 
         Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie"));
         tvTitle.setText(movie.getTitle());
@@ -72,7 +71,7 @@ public class DetailActivity extends YouTubeBaseActivity {
     }
 
     private void initializeYoutube(final String youtubeKey) {
-        youTubePlayerView.initialize(YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
+        ypvVideoPlayer.initialize(YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d("DetailActivity", "onInitializationSuccess()");

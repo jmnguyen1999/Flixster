@@ -4,32 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/item_movie_container_paddingBottom">
 
     <ImageView
         android:id="@+id/ivPoster"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/item_movie_land_ivPoster_layout_width"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="@dimen/item_movie_ivPoster_layout_marginStart"
+        android:layout_marginTop="@dimen/item_movie_ivPoster_layout_marginTop"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
-        tools:srcCompat="@tools:sample/avatars"
-        />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="@dimen/item_movie_tv_startAndTopMargins"
+        android:layout_marginTop="@dimen/item_movie_tv_startAndTopMargins"
         android:layout_toEndOf="@+id/ivPoster"
-        android:textSize="24sp"
-        tools:text="The Little Things"
-        android:transitionName="title"/>
+        android:textSize="@dimen/item_movie_tvTitle_textSize"
+        android:transitionName="title"
+        tools:text="@string/item_movie_tvTitle_sampleText" />
 
     <TextView
         android:id="@+id/tvOverview"
@@ -37,9 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginStart="@dimen/item_movie_tv_startAndTopMargins"
+        android:layout_marginTop="@dimen/item_movie_tv_startAndTopMargins"
+        android:layout_marginEnd="@dimen/item_movie_tvOverview_layout_marginEnd"
         android:layout_toEndOf="@+id/ivPoster"
-        tools:text="Deputy Sheriff Joe &quot;Deke&quot; Deacon joins forces with Sgt. Jim Baxter to search for a serial killer who's terrorizing Los Angeles. As they track the culprit, Baxter is unaware that the investigation is dredging up echoes of Deke's past, uncovering disturbing secrets that could threaten more than his case." />
+        tools:text="@string/item_movie_tvOverview_sampleText" />
 </RelativeLayout>

@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.DetailsActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activities.DetailsActivity">-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentBottom="true">
 
-    <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/ypvVideoPlayer"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/details_ypvVideoPlayer_layout_height"/>
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/details_tvTitle_padding"
-        android:paddingTop="@dimen/details_tvTitle_padding"
-        android:paddingRight="@dimen/details_tvTitle_padding"
-        android:paddingBottom="@dimen/details_tvTitle_padding"
-        android:text="@string/sampleTitle"
-        android:textSize="@dimen/details_tvTitle_textSize"
-        android:transitionName="title"
-        tools:layout_editor_absoluteX="details_tvTitle_layout_editor_absoluteX"
-        tools:layout_editor_absoluteY="@dimen/details_tvTitle_layout_editor_absoluteY"/>
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        style="@style/Widget.AppCompat.RatingBar.Indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:isIndicator="true"
-        android:numStars="10"
-        android:paddingStart="@dimen/details_ratingBar_padding"
-        android:paddingEnd="@dimen/details_ratingBar_padding"
-        android:paddingBottom="@dimen/details_ratingBar_padding"
-        android:rating="@dimen/details_ratingBar_sampleRating"/>
-
-    <TextView
-        android:id="@+id/tvOverview"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/details_tvOverview_paddingLeftEnd"
-        android:paddingTop="@dimen/details_tvOverview_paddingTop"
-        android:paddingEnd="@dimen/details_tvOverview_paddingLeftEnd"
-        android:text="@string/sampleOverview"
-        android:textAlignment="viewStart"
-        android:textSize="@dimen/details_tvOverview_textSize"/>
-</LinearLayout>
+        android:orientation="vertical"
+        tools:context=".activities.DetailsActivity">
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/ypvVideoPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/details_ypvVideoPlayer_layout_height" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/details_tvTitle_padding"
+            android:paddingTop="@dimen/details_tvTitle_padding"
+            android:paddingRight="@dimen/details_tvTitle_padding"
+            android:paddingBottom="@dimen/details_tvTitle_padding"
+            android:text="@string/sampleTitle"
+            android:textSize="@dimen/details_tvTitle_textSize"
+            android:transitionName="title"
+            tools:layout_editor_absoluteX="details_tvTitle_layout_editor_absoluteX"
+            tools:layout_editor_absoluteY="@dimen/details_tvTitle_layout_editor_absoluteY" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="10"
+            android:paddingStart="@dimen/details_ratingBar_padding"
+            android:paddingEnd="@dimen/details_ratingBar_padding"
+            android:paddingBottom="@dimen/details_ratingBar_padding"
+            android:rating="@dimen/details_ratingBar_sampleRating" />
+
+        <TextView
+            android:id="@+id/tvOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/details_tvOverview_paddingLeftEnd"
+            android:paddingTop="@dimen/details_tvOverview_paddingTop"
+            android:paddingEnd="@dimen/details_tvOverview_paddingLeftEnd"
+            android:text="@string/sampleOverview"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/details_tvOverview_textSize" />
+    </LinearLayout>
+</ScrollView>
+<!--</LinearLayout> -->

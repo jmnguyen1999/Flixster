@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     //Constants/Fields:
     public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     public static final String CONFIGURATION_URL = "https://api.themoviedb.org/3/configuration?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
-    public static final String TAG = "MainActivity";        //For Log.d statements
+    private static final String TAG = "MainActivity";        //For Log.d statements
 
     List<Movie> movies;
     String movieBackdropSize;

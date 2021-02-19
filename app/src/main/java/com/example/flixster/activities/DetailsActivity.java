@@ -61,6 +61,8 @@ public class DetailsActivity extends AppCompatActivity {
         fetchTrailer(movie);
         Log.d(TAG, "onCreate(): youtubeKey=" + youtubeKey);
 
+       // Intent intent = new Intent(DetailsActivity.this, MovieTrailerActivity.class);
+        //intent.putExtra("youtubeKey", youtubeKey);
         //Display Play button icon:
         ivPlayBttn.setImageResource(R.drawable.play_bttn);
         ivPlayBttn.setOnClickListener(new View.OnClickListener() {
@@ -71,13 +73,17 @@ public class DetailsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /*if(movie.getRating() > 5){
+            startActivity(intent);
+        }*/
     }
 
     /**
      * Purpose:         Executes network request through MovieDVClient to obtain the first trailer of the given movie. Then, ties the ypvVideoPlayer to play the trailer when clicked on. If no trailer can be played (no trailers available, or not playable by YouTube),
      * @param movie:    the movie wanted to inquire trailers for
      */
-    private void fetchTrailer(Movie movie){
+    public void fetchTrailer(Movie movie){
         client = new MovieDBClient();
         //1.) Make request to get available trailers using the movie id:
         client.makeTrailerRequest(movie.getMovieId(), new JsonHttpResponseHandler() {
@@ -110,4 +116,5 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
     }
+
 }

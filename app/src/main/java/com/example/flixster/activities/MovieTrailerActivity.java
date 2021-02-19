@@ -49,7 +49,7 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d(TAG, "initializeYoutube(): onInitializationSuccess()");
                 youTubePlayer.setFullscreen(true);
-                youTubePlayer.cueVideo(youtubeKey);
+                youTubePlayer.loadVideo(youtubeKey);
 
                 //Exits from activity once exit full screen:
                 youTubePlayer.setOnFullscreenListener(new YouTubePlayer.OnFullscreenListener() {

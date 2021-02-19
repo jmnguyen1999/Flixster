@@ -1,5 +1,14 @@
 package com.example.flixster.activities;
-
+/**
+ * DetailsActivity.java
+ * Purpose:               The details screen called when a movie is selected from the "FlixsterActivity". Displays the title, overview, and rating of a given movie. Also starts MovieTrailerActivity when play button icon is clicked to display YouTube trailer.
+ *
+ * Used:                            MovieDBClient.java, Movie.java, MovieTrailerActivity.java
+ * Corresponding Layout file:       "activity_details.xml"
+ *
+ * @author Josephine Mai Nguyen
+ * @version 1.0
+ */
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,9 +34,8 @@ import org.parceler.Parcels;
 import okhttp3.Headers;
 
 public class DetailsActivity extends AppCompatActivity {
-
-    private static final String TAG = "DetailsActivity";
-    private static final int TRAILER_INDEX = 0;          //always play the first trailer available
+    private static final String TAG = "DetailsActivity";        //for Log() statements
+    private static final int TRAILER_INDEX = 0;             //always play the first trailer available
     private static final String MOVIE_KEY = "movie";
 
     TextView tvTitle;
@@ -35,10 +43,14 @@ public class DetailsActivity extends AppCompatActivity {
     RatingBar ratingBar;
     ImageView ivPoster;
     ImageView ivPlayBttn;
-    MovieDBClient client;
+
+    MovieDBClient client;       //For making network calls for youtube trailer endpoints
     String youtubeKey;
 
     @Override
+    /**
+     * Purpose: Called when the activity is run. Attaches to "activity_details.xml", displays updated movie information, sets up a listener to MovieTrailerActivity{}
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
@@ -50,20 +62,18 @@ public class DetailsActivity extends AppCompatActivity {
         ivPoster = findViewById(R.id.ivPoster);
         ivPlayBttn = findViewById(R.id.ivPlayBttn);
 
-        //Display:
+        //Display Views:
         Movie movie = Parcels.unwrap(getIntent().getParcelableExtra(MOVIE_KEY));
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         ratingBar.setRating((float) movie.getRating());
         Glide.with(this).load(movie.getBackdropPath()).into(ivPoster);
 
-        //Get youtube trailer endpoint:
+        //Get youtube trailer endpoint:  updates "youtubeKey"
         fetchTrailer(movie);
-        Log.d(TAG, "onCreate(): youtubeKey=" + youtubeKey);
+        Log.i(TAG, "onCreate(): youtubeKey=" + youtubeKey);
 
-       // Intent intent = new Intent(DetailsActivity.this, MovieTrailerActivity.class);
-        //intent.putExtra("youtubeKey", youtubeKey);
-        //Display Play button icon:
+        //Display Play button and attach listener:      starts MovieTrailerActivity{}
         ivPlayBttn.setImageResource(R.drawable.play_bttn);
         ivPlayBttn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,18 +83,15 @@ public class DetailsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        /*if(movie.getRating() > 5){
-            startActivity(intent);
-        }*/
     }
 
     /**
-     * Purpose:         Executes network request through MovieDVClient to obtain the first trailer of the given movie. Then, ties the ypvVideoPlayer to play the trailer when clicked on. If no trailer can be played (no trailers available, or not playable by YouTube),
+     * Purpose:         Executes network request through MovieDVClient to obtain the endpoint of the first trailer of the given movie. If no trailer can be played (no trailers available, or not playable by YouTube), display a pop up message using Toast.
      * @param movie:    the movie wanted to inquire trailers for
      */
     public void fetchTrailer(Movie movie){
         client = new MovieDBClient();
+
         //1.) Make request to get available trailers using the movie id:
         client.makeTrailerRequest(movie.getMovieId(), new JsonHttpResponseHandler() {
             @Override
@@ -93,10 +100,11 @@ public class DetailsActivity extends AppCompatActivity {
                 try {
                     JSONArray results = json.jsonObject.getJSONArray(("results"));
 
-                    //1.) Check if there is a YouTube video can choose: not empty, and playable by YouTube
+                    //1.) Check if there is a YouTube video can choose:     not empty, and playable by YouTube
                     if(results.length() > 0){
                         String siteName = results.getJSONObject(TRAILER_INDEX).getString("site");
                         if(siteName.equals("YouTube")){
+
                             //2.) Get the key/endpoint of the YouTube video:
                             youtubeKey = results.getJSONObject(TRAILER_INDEX).getString("key");
                             Log.d(TAG, "onSuccess(): youtubeKey = " + youtubeKey);

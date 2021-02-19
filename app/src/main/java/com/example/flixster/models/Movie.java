@@ -1,11 +1,10 @@
 package com.example.flixster.models;
 /**
  * Movie.java
- * Purpose:     To contain all the needed Movie data in an object. Contains the movie's: posterpath, title, overview, and backdrop. Also saves which backdrop
- *              and posterpath image sizes to use when displaying. Class also has a "jsonArrayToList()" which can be used objectively without an instantiation
- *              of Movie{} at all.
+ * Purpose:               To contain all the needed Movie data in an object. Contains the movie's: posterpath, title, overview, and backdrop. Also saves which backdrop and posterpath image sizes to use when displaying. Class also has a "jsonArrayToList()" which can be used objectively without an instantiation of Movie{} at all.
  *
- * Used by: MainActivity.java
+ * Used:                        None
+ *Corresponding Layout file:    None
  *
  * @author Josephine Mai Nguyen
  * @version 1.0

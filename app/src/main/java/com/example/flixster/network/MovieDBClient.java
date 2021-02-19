@@ -1,5 +1,14 @@
 package com.example.flixster.network;
-
+/**
+ * MovieDBClient.java
+ * Purpose:                 A seperate class to make all network requests. Makes requests to "themoviedb.org"
+ *
+ * Used:                            None
+ * Corresponding Layout file:       None
+ *
+ * @author Josephine Mai Nguyen
+ * @version 1.0
+ */
 import android.util.Log;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;

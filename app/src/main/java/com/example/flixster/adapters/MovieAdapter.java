@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -118,8 +119,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                     Intent i = new Intent(context, DetailsActivity.class);
                     i.putExtra("movie", Parcels.wrap(movie));
                     // Pass data object in the bundle and populate details activity.
-                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, tvTitle, "title");
-                    Log.d("MovieAdapter", "onClick: starting activity");
+                    Pair<View, String> titleTrans = Pair.create(tvTitle, "title");
+                    Pair<View, String> imageTrans = Pair.create(ivPoster, "image");
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, imageTrans, titleTrans);
+
                     context.startActivity(i, options.toBundle());
                 }
             });

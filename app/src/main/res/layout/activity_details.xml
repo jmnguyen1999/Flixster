@@ -15,12 +15,13 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/ivPoster"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/details_ypvVideoPlayer_layout_height"
+                android:transitionName="image"
                 tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
 
             <ImageView
@@ -29,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:scaleX="2"
-                android:scaleY="2"/>
+                android:scaleY="2" />
 
         </FrameLayout>
 

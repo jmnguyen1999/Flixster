@@ -29,6 +29,7 @@ public class DetailsActivity extends AppCompatActivity {
     private static final String TAG = "DetailsActivity";
     private static final int TRAILER_INDEX = 0;          //always play the first trailer available
     private static final String MOVIE_KEY = "movie";
+
     TextView tvTitle;
     TextView tvOverview;
     RatingBar ratingBar;
@@ -41,22 +42,26 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        Log.d(TAG, "onCreate:");
+
+        //Initializations:
         tvTitle = findViewById(R.id.tvTitle);
         tvOverview = findViewById(R.id.tvOverview);
         ratingBar= findViewById(R.id.ratingBar);
         ivPoster = findViewById(R.id.ivPoster);
         ivPlayBttn = findViewById(R.id.ivPlayBttn);
 
+        //Display:
         Movie movie = Parcels.unwrap(getIntent().getParcelableExtra(MOVIE_KEY));
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         ratingBar.setRating((float) movie.getRating());
         Glide.with(this).load(movie.getBackdropPath()).into(ivPoster);
 
+        //Get youtube trailer endpoint:
         fetchTrailer(movie);
         Log.d(TAG, "onCreate(): youtubeKey=" + youtubeKey);
 
+        //Display Play button icon:
         ivPlayBttn.setImageResource(R.drawable.play_bttn);
         ivPlayBttn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +71,6 @@ public class DetailsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     /**
@@ -105,25 +109,5 @@ public class DetailsActivity extends AppCompatActivity {
                 Log.d(TAG, "makeTrailerRequest(" + String.valueOf(movie.getMovieId()) + ") : onFailure()");
             }
         });
-    }
-
-
-    /**
-     * Purpose:     Initializes ypvVideoPlayer and sets an onInitializedListener() to play the YouTube video corresponding to the given Youtube URL endpoint.
-     * @param youtubeKey:   the endpoint of a Youtube URL
-     */
-    private void initializeYoutube(String youtubeKey) {
-     /*   ypvVideoPlayer.initialize(YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
-            @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                Log.d(TAG, "initializeYoutube(): onInitializationSuccess()");
-                youTubePlayer.cueVideo(youtubeKey);
-            }
-
-            @Override
-            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-                Log.d(TAG, "initializeYoutube(): onInitializationFailure()");
-            }
-        });*/
     }
 }

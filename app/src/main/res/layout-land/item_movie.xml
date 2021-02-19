@@ -17,6 +17,7 @@
         android:layout_marginTop="@dimen/item_movie_ivPoster_layout_marginTop"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
+        android:transitionName="image"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView

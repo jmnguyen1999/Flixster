@@ -114,11 +114,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             container.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
+                    Log.d("MovieAdapter", "onClick: ");
                     Intent i = new Intent(context, DetailsActivity.class);
                     i.putExtra("movie", Parcels.wrap(movie));
-
                     // Pass data object in the bundle and populate details activity.
                     ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, tvTitle, "title");
+                    Log.d("MovieAdapter", "onClick: starting activity");
                     context.startActivity(i, options.toBundle());
                 }
             });

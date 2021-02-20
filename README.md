@@ -23,9 +23,7 @@ Flixster is an app that allows users to browse movies from the [The Movie Databa
 
 ### App Walkthough GIF
 
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
-
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="part2-walkthrough.gif" width=250><br>
 
 ### Notes:
 The required stories were relatively easy and simple to complete. Where most of my time went however, was attempting to include the stretch stories and other features myself. This was much more difficult to do as I often had to do extra research to understand how a structure or class works, in addition to the provided CodePAth guides. I also personally found the stretch stories this unit to be a bit contradicting. One story asks for popular movies to be automatically played, yet another story asks for popular movies to have a play button icon so the user may play the video themself. I personally included the play button icon for all movies, as I'd think the absence of the button at all would degrade user experience. 
